@@ -1,6 +1,4 @@
 import os
-import schedule as sch
-import time
 import emailSender
 from dotenv import load_dotenv
 
@@ -20,8 +18,4 @@ Como você ta em :D
 - Du
 """
 
-    sch.every(5).seconds.do(lambda: emailSender.send_email(message_title, email, password, target, message, attachments_files))
-
-    while True:
-        sch.run_pending()
-        time.sleep(1)
+    emailSender.send_email(message_title, email, password, target, message, attachments_files)
